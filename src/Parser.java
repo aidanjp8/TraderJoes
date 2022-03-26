@@ -10,8 +10,8 @@ public class Parser {
         System.out.println(Arrays.toString(fileParser()));
     }
     public static Food[] fileParser() throws FileNotFoundException {
-        ArrayList<String> temp = new ArrayList<>();
-        File file = new File("C:\\Users\\aidan\\IdeaProjects\\RecipeMaker\\src\\foodCSV.txt");
+        //ArrayList<String> temp = new ArrayList<>();
+        File file = new File("C:\\Users\\Aidan\\IdeaProjects\\TraderJoes\\src\\foodCSV.txt");
         Scanner sc = new Scanner(file);
 
         Food[] temp = new Food[50];
@@ -20,7 +20,7 @@ public class Parser {
             Food test = new Food();
             test.name = sc.next();
             test.type = sc.next();
-            test.price = sc.next();
+            test.price = Double.parseDouble(sc.next());
             test.weight = sc.next();
             //test.calories = sc.next();
             temp[i] = test;
@@ -37,7 +37,7 @@ class Food {
 
     public String name;
     public String type;
-    public String price;
+    public double price;
     public String weight;
     public String calories;
 
