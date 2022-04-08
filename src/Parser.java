@@ -6,15 +6,15 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Parser {
-    public static void main(String[] args) throws FileNotFoundException {
-        System.out.println(Arrays.toString(fileParser()));
-    }
-    public static Food[] fileParser() throws FileNotFoundException {
+    public Food[] allFood = new Food[50];
+
+    public Food[] fileParser() throws FileNotFoundException {
         //ArrayList<String> temp = new ArrayList<>();
-        File file = new File("C:\\Users\\Aidan\\IdeaProjects\\TraderJoes\\src\\foodCSV.txt");
+        //File file = new File("C:\\Users\\Aidan\\IdeaProjects\\TraderJoes\\src\\foodCSV.txt");
+        File file = new File("C:\\Users\\aidan\\IdeaProjects\\RecipeMaker\\out\\production\\RecipeMaker\\foodCSV.txt");
         Scanner sc = new Scanner(file);
 
-        Food[] temp = new Food[50];
+
         int i = 0;
         while (sc.hasNext()) {
             Food test = new Food();
@@ -23,13 +23,10 @@ public class Parser {
             test.price = Double.parseDouble(sc.next());
             test.weight = sc.next();
             //test.calories = sc.next();
-            temp[i] = test;
+            allFood[i] = test;
             i++;
-            if (i == 8) {
-                System.out.println();
-            }
         }
-        return temp;
+        return allFood;
     }
 }
 
